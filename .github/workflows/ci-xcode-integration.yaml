@@ -36,8 +36,7 @@ jobs:
 
       - name: Set simulator device location
         run: |
-          LOCATIONS=${{ vars.CONCAT_LOCATIONS_ARRAY }}
-          IFS="&" read -ra LOCATIONS_ARRAY <<< "${LOCATIONS}"
+          IFS="&" read -ra LOCATIONS_ARRAY <<< "{{ vars.CONCAT_LOCATIONS_ARRAY }}"
           
           SELECTED_LOCATION=${LOCATIONS_ARRAY[ $RANDOM % ${#LOCATIONS_ARRAY[@]} ]}
           
