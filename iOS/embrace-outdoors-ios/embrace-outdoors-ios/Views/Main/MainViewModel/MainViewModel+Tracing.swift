@@ -109,9 +109,6 @@ extension MainViewModel {
             traceRootSpan.addEvent(name: "making async network call")
             self.makeWorkingNetworkCall()
             
-            traceRootSpan.addEvent(name: "making old-style network call")
-            self.makeCallbackWorkingNetworkCall()
-            
             sleep(1)
         }
         

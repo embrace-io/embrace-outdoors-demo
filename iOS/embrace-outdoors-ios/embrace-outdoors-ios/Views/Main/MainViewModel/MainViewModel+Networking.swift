@@ -10,10 +10,9 @@ import Foundation
 extension MainViewModel {
     //MARK: Network Actions
     func makeMockEndpointCall() {
-        postCallBackNSFMockEndPoint()
-//        Task {
-//            await postNSFMockEndPoint()
-//        }
+        Task {
+            await postNSFMockEndPoint()
+        }
     }
     
     private func postNSFMockEndPoint() async {
@@ -23,32 +22,33 @@ extension MainViewModel {
         request.httpMethod = "POST"
         
         do {
-            let (_, _) = try await URLSession.shared.data(from: url)
+            let _ = try await URLSession.shared.data(from: url)
         } catch {
             print("error with mock endpoint:\n \(error)")
         }
     }
     
     private func postCallBackNSFMockEndPoint() {
+        // network request to test older, non-async networking
         //This endpoint expects a header for NSF. Must be https
         let url = URL(string: "https://dash-api.embrace.io/mock/trace_forwarding")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
         URLSession.shared.dataTask(with: request) { d, r, e in
-            guard let data = d else { return }
+            guard let _ = d else { return }
         }.resume()
     }
     
     func makeWorkingNetworkCall() {
-        makeCallbackWorkingNetworkCall()
-//        Task {
-//            await fetchParkDataForSelectedState()
-//        }
+        Task {
+            await fetchParkDataForSelectedState()
+        }
     }
     
     func makeCallbackWorkingNetworkCall() {
-        //network request to test older, non-async networking
+        // network request to test older, non-async networking
+        // loads a list of results
         let stateCode = StatesList.getAbbrevFrom(name: selectedState)
         let url = URL(
             string: "https://developer.nps.gov/api/v1/parks?stateCode=\(stateCode)&api_key=snTswDbB4TUdS3BjIh4TUoaJx56xXI0JKfU3kLZF"
@@ -69,6 +69,7 @@ extension MainViewModel {
     }
     
     private func fetchParkDataForSelectedState() async {
+        // loads a list of results
         let stateCode = StatesList.getAbbrevFrom(name: selectedState)
         let url = URL(
             string: "https://developer.nps.gov/api/v1/parks?stateCode=\(stateCode)&api_key=snTswDbB4TUdS3BjIh4TUoaJx56xXI0JKfU3kLZF"
@@ -85,18 +86,17 @@ extension MainViewModel {
     }
     
     func makeForbiddenCall() {
-        makeCallbackForbiddenDataCall()
-//        Task {
-//            await fetchForbiddenData()
-//        }
+        Task {
+            await fetchForbiddenData()
+        }
     }
     
     private func fetchForbiddenData() async {
         // No API Key - 403 error
-        let url = URL(string: "https://developer.nps.gov/api/v1/lessonplans")!
+        let url = URL(string: "https://developer.nps.gov/api/v1/parks")!
         
         do {
-            let (_, _) = try await URLSession.shared.data(from: url)
+            let _ = try await URLSession.shared.data(from: url)
         } catch {
             print("error with forbidden call:\n \(error)")
         }
@@ -104,19 +104,18 @@ extension MainViewModel {
     
     private func makeCallbackForbiddenDataCall() {
         //network request to test older, non-async networking
-        let url = URL(string: "https://developer.nps.gov/api/v1/lessonplans")!
+        // No API Key - 403 error
+        let url = URL(string: "https://developer.nps.gov/api/v1/parks")!
         
         URLSession.shared.dataTask(with: url) { d, r, e in
-            guard let data = d else { return }
-            print(data)
+            guard let _ = d else { return }
         }.resume()
     }
     
     func makeTimeoutCall() {
-        makeCallbackTimeoutCall()
-//        Task {
-//            await fetchTimeout()
-//        }
+        Task {
+            await fetchTimeout()
+        }
     }
     
     private func fetchTimeout() async {
@@ -127,11 +126,11 @@ extension MainViewModel {
         let session = URLSession(configuration: sessionConfig)
         
         let url = URL(
-            string: "https://developer.nps.gov/api/v1/lessonplans?api_key=snTswDbB4TUdS3BjIh4TUoaJx56xXI0JKfU3kLZF"
+            string: "https://developer.nps.gov/api/v1/parks?api_key=snTswDbB4TUdS3BjIh4TUoaJx56xXI0JKfU3kLZF"
         )!
         
         do {
-            let (_, _) = try await session.data(from: url)
+            let _ = try await session.data(from: url)
         } catch {
             print("error with timeout call:\n \(error)")
         }
@@ -139,6 +138,7 @@ extension MainViewModel {
     
     private func makeCallbackTimeoutCall() {
         //network request to test older, non-async networking
+        //Build impossible timeout into URLSession
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 0.01
         sessionConfig.timeoutIntervalForResource = 0.01
@@ -150,8 +150,7 @@ extension MainViewModel {
         session.dataTask(
             with: url,
             completionHandler: { d, r, e in
-                guard let data = d else { return }
-                print(data)
+                guard let _ = d else { return }
             }
         ).resume()
     }
