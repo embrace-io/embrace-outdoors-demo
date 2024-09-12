@@ -21,4 +21,8 @@ extension TimeInterval {
     static var mockLongTimeInterval: Double {
         Double.random(in: 0.26...1.00)
     }
+    
+    static var variableTimeInterval: Double {
+        Double.random(in: 1.0...8.0) * Self.mockLongTimeInterval
+    }
 }
