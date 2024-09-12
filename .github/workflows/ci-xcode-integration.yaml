@@ -34,6 +34,15 @@ jobs:
 
       - uses: actions/checkout@v4
 
+      - name: Set simulator device location
+        run: |
+          LOCATIONS=${{ vars.CONCAT_LOCATIONS_ARRAY }}
+          IFS="&" read -ra LOCATIONS_ARRAY <<< "${LOCATIONS}"
+          
+          SELECTED_LOCATION=${LOCATIONS_ARRAY[ $RANDOM % ${#LOCATIONS_ARRAY[@]} ]}
+          
+          xcrun simctl location "${{ matrix.device }}" set "${SELECTED_LOCATION}"
+
       - name: Set Embrace appId
         run: |
           sed -i.bak 's/appId: ".*"/appId: "${{ vars.EMBRACE_APP_ID }}"/' iOS/${{ env.PROJECT }}/${{ env.PROJECT }}/App/EmbraceOutdoorsApp.swift
