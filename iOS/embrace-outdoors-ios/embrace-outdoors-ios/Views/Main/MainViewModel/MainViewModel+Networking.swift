@@ -22,7 +22,7 @@ extension MainViewModel {
         request.httpMethod = "POST"
         
         do {
-            let _ = try await URLSession.shared.data(from: url)
+            let _ = try await URLSession.shared.data(for: request)
         } catch {
             print("error with mock endpoint:\n \(error)")
         }
