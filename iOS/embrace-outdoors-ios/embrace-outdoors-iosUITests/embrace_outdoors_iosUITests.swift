@@ -49,6 +49,7 @@ final class embrace_outdoors_iosUITests: XCTestCase {
             backgroundApp()
             foregroundApp()
         }
+        //Run one last session and background the app
         runNormalFlow()
         backgroundApp()
         XCTAssert(true)
@@ -87,7 +88,7 @@ final class embrace_outdoors_iosUITests: XCTestCase {
     }
     
     private func getNumberOfSessions() -> Int {
-        Int.random(in: 1...6)
+        Int.random(in: 3...10)
     }
     
     private func calculateAndCreateCrash() {
