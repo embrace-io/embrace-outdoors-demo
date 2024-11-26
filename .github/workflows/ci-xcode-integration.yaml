@@ -18,8 +18,8 @@ jobs:
         xcode_version: ["15.4"]
         device:
           - "iPhone 15"
-          - "iPhone 14 Plus"
-          - "iPhone 14 Pro"
+          - "iPhone 15 Plus"
+          - "iPhone 15 Pro"
     steps:
       - name: Select Xcode
         # See https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md
