@@ -2,19 +2,23 @@ receivers:
   otlp:
     protocols:
       grpc:
+        endpoint: 0.0.0.0:4317
 
 exporters:
-  logging:
-  
+  debug:
+    verbosity: normal
+
   zipkin:
     endpoint: "http://zipkin-all-in-one:9411/api/v2/spans"
+    tls:
+      insecure: true
 
 processors:
   filter/ottl:
     error_mode: ignore
     traces:
         span:
-            - 'name == "emb-session"'
+            - 'name == "emb-setup"'
   resource:
     attributes:
       - key: service.name
@@ -25,9 +29,10 @@ processors:
 service:
   telemetry:
     logs:
-      level: "debug"
+      level: debug
+
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [logging, zipkin]
+      exporters: [debug, zipkin]
       processors: [resource, batch]
