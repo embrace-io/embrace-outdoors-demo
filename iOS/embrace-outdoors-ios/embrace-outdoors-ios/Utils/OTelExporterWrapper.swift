@@ -29,7 +29,7 @@ struct ExporterWrapper {
         return OtlpTraceExporter(channel: client)
     }
     
-    static let xcodeLoggingSpanExporter = StdoutExporter()
+    static let consoleSpanExporter = StdoutSpanExporter()
     
     static func grafanaHTTPEndpointSpanExporter(authorizationKey: String) -> OtlpHttpTraceExporter {
         let configuration = URLSessionConfiguration.default
@@ -70,7 +70,7 @@ struct ExporterWrapper {
     }
     
     static func spanExporterWithXcodeSpanLogging(exporter: SpanExporter) -> MultiSpanExporter {
-        MultiSpanExporter(spanExporters: [exporter, Self.xcodeLoggingSpanExporter])
+        MultiSpanExporter(spanExporters: [Self.consoleSpanExporter, exporter])
     }
     
 }
