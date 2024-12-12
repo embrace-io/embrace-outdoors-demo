@@ -21,7 +21,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Live Updates Trace",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
@@ -102,7 +102,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Concurrent Network Request Trace",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
@@ -125,7 +125,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Network Request",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
@@ -192,7 +192,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Enter Checkout Flow",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
@@ -274,7 +274,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Browse Local Restaurants",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
@@ -341,7 +341,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Attempt Login",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
@@ -440,7 +440,7 @@ extension MainViewModel {
             .buildSpan(
                 name: "Enter Search",
                 type: .ux
-            ).markAsKeySpan()
+            )
             .setStartTime(time: parentStartTime)
             .startSpan()
         
