@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import EmbraceIO
 
 @Observable
 class DetailViewModel {
@@ -21,5 +22,12 @@ class DetailViewModel {
     
     init(park: ParkRequestResult.Park) {
         self.park = park
+    }
+    
+    func logViewAppeared() {
+        Embrace.client?.log(
+            "Detail View Model Appeared for \(park.parkName)",
+            severity: .info
+        )
     }
 }

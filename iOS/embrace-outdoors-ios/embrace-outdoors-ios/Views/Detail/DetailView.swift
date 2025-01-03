@@ -19,6 +19,9 @@ struct DetailView: View {
             Text(viewModel.parkDescription)
         }
         .navigationTitle(viewModel.parkName)
+        .onAppear {
+            self.viewModel.logViewAppeared()
+        }
     }
     
 }

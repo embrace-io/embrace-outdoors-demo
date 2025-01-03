@@ -142,6 +142,9 @@ struct MainView: View {
             .navigationTitle(Text(viewModel.titleText))
             .accessibilityIdentifier("main-list-view")
         } detail: {}
+            .onAppear {
+                self.viewModel.logViewAppeared()
+            }
     }
 }
 

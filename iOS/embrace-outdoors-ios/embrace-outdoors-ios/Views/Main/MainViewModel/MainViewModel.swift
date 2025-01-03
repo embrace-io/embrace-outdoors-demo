@@ -61,6 +61,10 @@ class MainViewModel {
     }
     
     //MARK: System Action
+    func logViewAppeared() {
+        Embrace.client?.log("Main View Model Appeared", severity: .info)
+    }
+    
     func forceEmbraceCrash() {
         Embrace.client?.crash()
     }
