@@ -17,6 +17,8 @@ extension MainViewModel {
         guard let client = Embrace.client else {return}
         
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning nested flow", properties: ["startTime" : parentStartTime.description]))
+        
         let traceRootSpan = client
             .buildSpan(
                 name: "Live Updates Trace",
@@ -98,6 +100,8 @@ extension MainViewModel {
         guard let client = Embrace.client else {return}
         
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning concurrent request flow", properties: ["startTime" : parentStartTime.description]))
+
         let traceRootSpan = client
             .buildSpan(
                 name: "Concurrent Network Request Trace",
@@ -121,6 +125,8 @@ extension MainViewModel {
         guard let client = Embrace.client else {return}
                         
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning middleware flow", properties: ["startTime" : parentStartTime.description]))
+        
         let traceRootSpan = client
             .buildSpan(
                 name: "Network Request",
@@ -188,6 +194,8 @@ extension MainViewModel {
         guard let client = Embrace.client else {return}
         
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning checkout flow", properties: ["startTime" : parentStartTime.description]))
+        
         let traceRootSpan = client
             .buildSpan(
                 name: "Enter Checkout Flow",
@@ -268,8 +276,10 @@ extension MainViewModel {
     
     func buildMockPermissionsSpans() {
         guard let client = Embrace.client else {return}
-                
+        
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning permissions flow", properties: ["startTime" : parentStartTime.description]))
+
         let traceRootSpan = client
             .buildSpan(
                 name: "Browse Local Restaurants",
@@ -336,7 +346,10 @@ extension MainViewModel {
     
     func buildMockAuthSpans() {
         guard let client = Embrace.client else {return}
+
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning auth flow", properties: ["startTime" : parentStartTime.description]))
+        
         let traceRootSpan = client
             .buildSpan(
                 name: "Attempt Login",
@@ -435,7 +448,10 @@ extension MainViewModel {
     
     func buildMockSearchSpans() {
         guard let client = Embrace.client else {return}
+        
         let parentStartTime = Date.now
+        client.add(event: .breadcrumb("beginning search flow", properties: ["startTime" : parentStartTime.description]))
+        
         let traceRootSpan = client
             .buildSpan(
                 name: "Enter Search",
