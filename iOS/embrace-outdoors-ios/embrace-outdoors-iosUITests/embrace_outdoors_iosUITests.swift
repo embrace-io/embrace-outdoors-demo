@@ -94,7 +94,7 @@ final class embrace_outdoors_iosUITests: XCTestCase {
     private func calculateAndCreateCrash() {
         //TODO: Make this variable by device OS version
         let probability = Int.random(in: 0...99)
-        if probability > 98 {
+        if probability > 94 {
             tapCrashButton()
         }
     }
