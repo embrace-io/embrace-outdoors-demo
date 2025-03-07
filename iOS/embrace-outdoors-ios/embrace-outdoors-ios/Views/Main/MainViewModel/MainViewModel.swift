@@ -64,8 +64,25 @@ class MainViewModel {
     func logViewAppeared() {
         Embrace.client?.log("Main View Appeared", severity: .info)
     }
+
+    func logRandomAction() {
+        let randomAction = ["User tapped a button", "User swiped left", "User swiped right", "User tapped a cell"].randomElement() ?? "User did something"
+        let attributes = ["action": randomAction]
+        
+        Embrace.client?.log("user action"
+                            ,attributes: attributes
+                            ,severity: .warn)
+    }
     
     func forceEmbraceCrash() {
+        // This will force a crash in the app and send the crash event to Embrace with the provided severity and any additional attributes
+        let randomExperiment = ["A", "B", "C", "D"].randomElement() ?? "A"
+        let attributes = ["experiment": randomExperiment]
+
+        Embrace.client?.log("Forcing a crash"
+                            ,attributes: attributes
+                            ,severity: .error)
+
         Embrace.client?.crash()
     }
 }
