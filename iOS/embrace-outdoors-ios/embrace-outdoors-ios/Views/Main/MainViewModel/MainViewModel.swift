@@ -70,8 +70,8 @@ class MainViewModel {
         let attributes = ["action": randomAction]
         
         Embrace.client?.log("user action"
-                            ,attributes: attributes
-                            ,severity: .warn)
+                            ,severity: .warn
+                            ,attributes: attributes)
     }
     
     func forceEmbraceCrash() {
@@ -80,8 +80,8 @@ class MainViewModel {
         let attributes = ["experiment": randomExperiment]
 
         Embrace.client?.log("Forcing a crash"
-                            ,attributes: attributes
-                            ,severity: .error)
+                            ,severity: .error
+                            ,attributes: attributes)
 
         Embrace.client?.crash()
     }
