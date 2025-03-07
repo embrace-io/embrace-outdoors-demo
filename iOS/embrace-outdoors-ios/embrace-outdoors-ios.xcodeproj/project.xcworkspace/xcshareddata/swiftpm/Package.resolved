@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/embrace-io/embrace-apple-sdk",
       "state" : {
-        "revision" : "14ff0a36ee42bb23036d33564d013b81a8ca1140",
-        "version" : "6.7.1"
+        "revision" : "0d6c927d8b888258c2e4f2f3996dc7592cf8cbd0",
+        "version" : "6.8.1"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/grpc/grpc-swift.git",
       "state" : {
-        "revision" : "6a90b7e77e29f9bda6c2b3a4165a40d6c02cfda1",
-        "version" : "1.23.0"
+        "revision" : "8c5e99d0255c373e0330730d191a3423c57373fb",
+        "version" : "1.24.2"
       }
     },
     {
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/open-telemetry/opentelemetry-swift",
       "state" : {
-        "revision" : "f2315d8646432c02338960e85b5fe20417ad6d8d",
-        "version" : "1.12.1"
+        "revision" : "2ffffae2a027e2159dbf3fd53de1f25ba6d2d11d",
+        "version" : "1.13.0"
       }
     },
     {
