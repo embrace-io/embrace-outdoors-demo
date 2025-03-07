@@ -144,6 +144,7 @@ struct MainView: View {
         } detail: {}
             .onAppear {
                 self.viewModel.logViewAppeared()
+                self.viewModel.logRandomAction()
             }
     }
 }
