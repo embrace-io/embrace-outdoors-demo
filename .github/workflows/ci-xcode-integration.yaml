@@ -30,7 +30,6 @@ jobs:
       - name: Boot simulator
         run: |
           xcrun simctl boot "${{ matrix.device }}"
-          xcrun simctl bootstatus "${{ matrix.device }}"
 
       - uses: actions/checkout@v4
 
