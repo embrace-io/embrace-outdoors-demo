@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import EmbraceIO
 
 struct MainView: View {
     @State private var viewModel = MainViewModel()
@@ -67,6 +68,36 @@ struct MainView: View {
                     
                 } header: {
                     Text(viewModel.tracesSectionHeaderText)
+                }
+                
+                // UIKit Demo Section
+                Section {
+                    NavigationLink(viewModel.crashDemoLabelText) {
+                        CrashDemoView()
+                            .ignoresSafeArea()
+                    }
+                    .accessibilityIdentifier("uikit-crash-demo-button")
+                    
+                    NavigationLink(viewModel.backgroundCrashDemoLabelText) {
+                        BackgroundCrashDemoView()
+                            .ignoresSafeArea()
+                    }
+                    .accessibilityIdentifier("uikit-background-crash-demo-button")
+                    
+                    NavigationLink(viewModel.memoryLeakDemoLabelText) {
+                        MemoryLeakDemoView()
+                            .ignoresSafeArea()
+                    }
+                    .accessibilityIdentifier("uikit-memory-leak-demo-button")
+                    
+                    NavigationLink(viewModel.networkErrorDemoLabelText) {
+                        NetworkErrorDemoView()
+                            .ignoresSafeArea()
+                    }
+                    .accessibilityIdentifier("uikit-network-error-demo-button")
+                    
+                } header: {
+                    Text(viewModel.uiKitDemosSectionHeaderText)
                 }
                 
                 // Sampling of Embrace actions
