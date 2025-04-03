@@ -27,6 +27,11 @@
 		54EC941D2C6B70E200055212 /* EmbraceIO in Frameworks */ = {isa = PBXBuildFile; productRef = 54EC941C2C6B70E200055212 /* EmbraceIO */; };
 		54EC941F2C6B717300055212 /* TimeInterval+MockTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC941E2C6B717300055212 /* TimeInterval+MockTiming.swift */; };
 		54EC94212C6B719F00055212 /* OTelExporterWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC94202C6B719F00055212 /* OTelExporterWrapper.swift */; };
+		7010CD952D9F315800C1F804 /* UIKitDemosWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010CD932D9F315800C1F804 /* UIKitDemosWrappers.swift */; };
+		7010CD962D9F315800C1F804 /* CrashDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010CD902D9F315800C1F804 /* CrashDemoViewController.swift */; };
+		7010CD972D9F315800C1F804 /* BackgroundCrashDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010CD8F2D9F315800C1F804 /* BackgroundCrashDemoViewController.swift */; };
+		7010CD982D9F315800C1F804 /* MemoryLeakDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010CD912D9F315800C1F804 /* MemoryLeakDemoViewController.swift */; };
+		7010CD992D9F315800C1F804 /* NetworkErrorDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7010CD922D9F315800C1F804 /* NetworkErrorDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		54EC94192C6B704C00055212 /* Embrace-Outdoors-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Embrace-Outdoors-Info.plist"; sourceTree = "<group>"; };
 		54EC941E2C6B717300055212 /* TimeInterval+MockTiming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+MockTiming.swift"; sourceTree = "<group>"; };
 		54EC94202C6B719F00055212 /* OTelExporterWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTelExporterWrapper.swift; sourceTree = "<group>"; };
+		7010CD8F2D9F315800C1F804 /* BackgroundCrashDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCrashDemoViewController.swift; sourceTree = "<group>"; };
+		7010CD902D9F315800C1F804 /* CrashDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashDemoViewController.swift; sourceTree = "<group>"; };
+		7010CD912D9F315800C1F804 /* MemoryLeakDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeakDemoViewController.swift; sourceTree = "<group>"; };
+		7010CD922D9F315800C1F804 /* NetworkErrorDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDemoViewController.swift; sourceTree = "<group>"; };
+		7010CD932D9F315800C1F804 /* UIKitDemosWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitDemosWrappers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,7 @@
 		54EC94142C6B6FE800055212 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7010CD942D9F315800C1F804 /* UIKitDemos */,
 				54C96F132C6B76ED00F4A275 /* Main */,
 				54C96F142C6B76F400F4A275 /* Detail */,
 			);
@@ -191,6 +202,18 @@
 				54C96F102C6B765B00F4A275 /* ParkRequestResult.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		7010CD942D9F315800C1F804 /* UIKitDemos */ = {
+			isa = PBXGroup;
+			children = (
+				7010CD8F2D9F315800C1F804 /* BackgroundCrashDemoViewController.swift */,
+				7010CD902D9F315800C1F804 /* CrashDemoViewController.swift */,
+				7010CD912D9F315800C1F804 /* MemoryLeakDemoViewController.swift */,
+				7010CD922D9F315800C1F804 /* NetworkErrorDemoViewController.swift */,
+				7010CD932D9F315800C1F804 /* UIKitDemosWrappers.swift */,
+			);
+			path = UIKitDemos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +339,11 @@
 				54C96F1A2C6B779A00F4A275 /* MainViewModel+Tracing.swift in Sources */,
 				54C96F112C6B765B00F4A275 /* ParkRequestResult.swift in Sources */,
 				54C96F162C6B770F00F4A275 /* DetailView.swift in Sources */,
+				7010CD952D9F315800C1F804 /* UIKitDemosWrappers.swift in Sources */,
+				7010CD962D9F315800C1F804 /* CrashDemoViewController.swift in Sources */,
+				7010CD972D9F315800C1F804 /* BackgroundCrashDemoViewController.swift in Sources */,
+				7010CD982D9F315800C1F804 /* MemoryLeakDemoViewController.swift in Sources */,
+				7010CD992D9F315800C1F804 /* NetworkErrorDemoViewController.swift in Sources */,
 				54C96F0B2C6B751700F4A275 /* MainViewModel.swift in Sources */,
 				54C96F182C6B771900F4A275 /* DetailViewModel.swift in Sources */,
 				54EC941F2C6B717300055212 /* TimeInterval+MockTiming.swift in Sources */,

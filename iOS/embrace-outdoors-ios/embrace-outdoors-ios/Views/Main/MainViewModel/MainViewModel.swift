@@ -25,6 +25,7 @@ class MainViewModel {
     let titleText = "Embrace Outdoors!"
     let tracesSectionHeaderText = "Try these traces!"
     let networkingSectionHeaderText = "Try these actions!"
+    let uiKitDemosSectionHeaderText = "UIKit Demos"
     let pickerText = "Select a state:"
     let nsfRequestLabelText = "Make a request that uses Network Span Forwarding"
     let unauthorizedRequestLabelText = "Make an unauthorized request"
@@ -38,6 +39,12 @@ class MainViewModel {
     let mockCheckoutLabelText = "Create a mock checkout trace"
     let mockPermissionsLabelText = "Create a mock app location permissions trace"
     let mockNetworkingMiddlewareLabelText = "Create a mock networking middleware trace"
+    
+    // UIKit Demo labels
+    let crashDemoLabelText = "UIKit Crash Demo"
+    let backgroundCrashDemoLabelText = "UIKit Background Crash Demo"
+    let memoryLeakDemoLabelText = "UIKit Memory Leak Demo"
+    let networkErrorDemoLabelText = "UIKit Network Error Demo"
     
     var resultSectionHeaderText: String {
         parksFromResult.count.description + " parks in " + requestedState
