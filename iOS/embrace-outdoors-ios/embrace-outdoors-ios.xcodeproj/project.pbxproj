@@ -600,8 +600,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/embrace-io/embrace-apple-sdk";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 6.12.1;
+				kind = exactVersion;
+				version = 6.13.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
