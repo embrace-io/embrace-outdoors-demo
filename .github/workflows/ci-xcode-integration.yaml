@@ -3,14 +3,14 @@ name: Xcode - Integration Testing
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "*/15 * * * *"
 
 env:
   PROJECT: embrace-outdoors-ios
 
 jobs:
   xcode-test:
-    timeout-minutes: 40
+    timeout-minutes: 30
     runs-on: macos-latest
     strategy:
       fail-fast: false
@@ -22,7 +22,7 @@ jobs:
           - "iPhone 15 Pro"
     steps:
       - name: Select Xcode
-        # See https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md
+        # See https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md#xcode
         run: |
           sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode_version }}.app
           xcodebuild -version
