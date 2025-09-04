@@ -19,7 +19,6 @@ jobs:
         device:
           - "iPhone 16"
           - "iPhone 16 Plus"
-          - "iPhone 16 Pro"
     steps:
       - name: Select Xcode
         # See https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md#xcode
