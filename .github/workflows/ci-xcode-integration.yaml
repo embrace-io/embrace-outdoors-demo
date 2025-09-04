@@ -17,9 +17,9 @@ jobs:
       matrix:
         xcode_version: ["16.4"]
         device:
-          - "iPhone 15"
-          - "iPhone 15 Plus"
-          - "iPhone 15 Pro"
+          - "iPhone 16"
+          - "iPhone 16 Plus"
+          - "iPhone 16 Pro"
     steps:
       - name: Select Xcode
         # See https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md#xcode
