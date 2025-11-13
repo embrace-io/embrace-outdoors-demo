@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54C96F032C6B73DD00F4A275 /* OpenTelemetryProtocolExporter in Frameworks */ = {isa = PBXBuildFile; productRef = 54C96F022C6B73DD00F4A275 /* OpenTelemetryProtocolExporter */; };
-		54C96F052C6B73DD00F4A275 /* OpenTelemetryProtocolExporterHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 54C96F042C6B73DD00F4A275 /* OpenTelemetryProtocolExporterHTTP */; };
-		54C96F072C6B73DD00F4A275 /* OpenTelemetrySdk in Frameworks */ = {isa = PBXBuildFile; productRef = 54C96F062C6B73DD00F4A275 /* OpenTelemetrySdk */; };
-		54C96F092C6B73DD00F4A275 /* StdoutExporter in Frameworks */ = {isa = PBXBuildFile; productRef = 54C96F082C6B73DD00F4A275 /* StdoutExporter */; };
 		54C96F0B2C6B751700F4A275 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96F0A2C6B751700F4A275 /* MainViewModel.swift */; };
 		54C96F0D2C6B75E300F4A275 /* StatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96F0C2C6B75E300F4A275 /* StatesList.swift */; };
 		54C96F0F2C6B763900F4A275 /* MainViewModel+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96F0E2C6B763900F4A275 /* MainViewModel+Networking.swift */; };
@@ -72,10 +68,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				54EC941D2C6B70E200055212 /* EmbraceIO in Frameworks */,
-				54C96F092C6B73DD00F4A275 /* StdoutExporter in Frameworks */,
-				54C96F052C6B73DD00F4A275 /* OpenTelemetryProtocolExporterHTTP in Frameworks */,
-				54C96F032C6B73DD00F4A275 /* OpenTelemetryProtocolExporter in Frameworks */,
-				54C96F072C6B73DD00F4A275 /* OpenTelemetrySdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +221,6 @@
 			name = "embrace-outdoors-ios";
 			packageProductDependencies = (
 				54EC941C2C6B70E200055212 /* EmbraceIO */,
-				54C96F022C6B73DD00F4A275 /* OpenTelemetryProtocolExporter */,
-				54C96F042C6B73DD00F4A275 /* OpenTelemetryProtocolExporterHTTP */,
-				54C96F062C6B73DD00F4A275 /* OpenTelemetrySdk */,
-				54C96F082C6B73DD00F4A275 /* StdoutExporter */,
 			);
 			productName = "embrace-outdoors-ios";
 			productReference = 54EC94022C6B6F0300055212 /* embrace-outdoors-ios.app */;
@@ -268,7 +256,6 @@
 			mainGroup = 54EC93F92C6B6F0300055212;
 			packageReferences = (
 				54EC941B2C6B70E200055212 /* XCRemoteSwiftPackageReference "embrace-apple-sdk" */,
-				54C96F012C6B73DC00F4A275 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */,
 			);
 			productRefGroup = 54EC94032C6B6F0300055212 /* Products */;
 			projectDirPath = "";
@@ -588,45 +575,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54C96F012C6B73DC00F4A275 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/open-telemetry/opentelemetry-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.12.1;
-			};
-		};
 		54EC941B2C6B70E200055212 /* XCRemoteSwiftPackageReference "embrace-apple-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/embrace-io/embrace-apple-sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 6.12.1;
+				minimumVersion = 6.14.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54C96F022C6B73DD00F4A275 /* OpenTelemetryProtocolExporter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54C96F012C6B73DC00F4A275 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
-			productName = OpenTelemetryProtocolExporter;
-		};
-		54C96F042C6B73DD00F4A275 /* OpenTelemetryProtocolExporterHTTP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54C96F012C6B73DC00F4A275 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
-			productName = OpenTelemetryProtocolExporterHTTP;
-		};
-		54C96F062C6B73DD00F4A275 /* OpenTelemetrySdk */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54C96F012C6B73DC00F4A275 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
-			productName = OpenTelemetrySdk;
-		};
-		54C96F082C6B73DD00F4A275 /* StdoutExporter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54C96F012C6B73DC00F4A275 /* XCRemoteSwiftPackageReference "opentelemetry-swift" */;
-			productName = StdoutExporter;
-		};
 		54EC941C2C6B70E200055212 /* EmbraceIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 54EC941B2C6B70E200055212 /* XCRemoteSwiftPackageReference "embrace-apple-sdk" */;
