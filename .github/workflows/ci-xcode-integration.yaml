@@ -34,7 +34,7 @@ jobs:
         run: |
           xcrun simctl boot "${{ matrix.device }}"
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Set Embrace appId
         run: |
