@@ -40,7 +40,7 @@ jobs:
         run: |
           sed -i.bak 's/appId: ".*"/appId: "${{ vars.EMBRACE_APP_ID }}"/' iOS/${{ env.PROJECT }}/${{ env.PROJECT }}/App/EmbraceOutdoorsApp.swift
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: build/
           key: ${{ runner.os }}-swiftpm-${{ hashFiles('iOS/embrace-outdoors-ios/embrace-outdoors-ios.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
